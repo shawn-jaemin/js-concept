@@ -82,7 +82,15 @@ function getNewValue(name, age, job) {
 let newVal = new getNewValue('shawn', '28', 'programmer'); // 함수 내부의 this값에 할당되는 데이터를 가지고 새로운 object를 만든다.
 console.log(newVal);
 
+// 5. event listener
+let element = document.querySelector('#event');
+element.addEventListener('click', function(event) {
+    console.log(this, event); // this === element
+});
 
+element.addEventListener('click', event => {
+    console.log(this, event); // this === window || arrow function을 사용하면 this는 window가 된다.
+});
 
 
 
